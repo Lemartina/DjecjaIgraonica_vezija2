@@ -77,7 +77,7 @@ public class Usluga extends Entitet {
 
 	@Override
 	public String toString() {
-		return naziv;
+		return naziv + " (cijena: "+ cijena + " EUR)";
 	}
 
 }
