@@ -343,7 +343,8 @@ implements NovoselacViewSucelje{
         }
         
         lstPosjeteNaDjelatniku.repaint();
-
+        
+    
     }//GEN-LAST:event_btnDodajPosjetuActionPerformed
 
     private void btnObrisiPosjetuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnObrisiPosjetuActionPerformed
