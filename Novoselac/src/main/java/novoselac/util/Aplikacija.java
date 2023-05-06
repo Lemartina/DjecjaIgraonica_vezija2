@@ -12,7 +12,7 @@ import novoselac.model.Operater;
  */
 public class Aplikacija {
     
-    public static final String NAZIV_NOVOSELAC="Dječja igraonica";
+    public static final String NAZIV_NOVOSELAC="Dječja igraonica - verzija 2 ";
     
     public static Operater OPERATER;
 }
