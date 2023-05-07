@@ -75,17 +75,17 @@ implements NovoselacViewSucelje{
         cmbFilterDjelatnici.repaint();
          }
 
-      private void ucitajPosjete(){
+      private void ucitajPosjete(){  //Dogovorene psojete
            DefaultListModel<Posjeta> m = new DefaultListModel<>();
         m.addAll(obradaPosjeta.read(txtUvjet.getText().trim()));
        
         
-        //pretraga na ekranu u formatu datuma bez kalendara
-        List<Posjeta> lista = obradaPosjeta.read();
-        for (Posjeta p : lista){
-            if (p.toString().toLowerCase().contains(txtUvjet.getText().trim().toLowerCase()))
-        m.addElement(p);
-                }
+        //pretraga na ekranu u formatu datuma bez kalendara  - nije dobro dupla ispis na ekranu
+//        List<Posjeta> lista = obradaPosjeta.read();
+//        for (Posjeta p : lista){
+//            if (p.toString().toLowerCase().contains(txtUvjet.getText().trim().toLowerCase()))
+//        m.addElement(p);
+//                }
         
         lstDogovorenePosjete.setModel(m);
        lstDogovorenePosjete.repaint();
@@ -246,12 +246,13 @@ implements NovoselacViewSucelje{
                         .addComponent(btnTrazi, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 63, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jScrollPane2)
-                        .addGap(86, 86, 86))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(95, 95, 95)
                         .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(12, 12, 12)
+                        .addComponent(jScrollPane2)
+                        .addContainerGap())))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -274,7 +275,7 @@ implements NovoselacViewSucelje{
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(btnDodaj)
                             .addComponent(btnPregledPosjetaNaDjelatniku))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
                         .addComponent(lblPotvrdjeno)
                         .addGap(14, 14, 14))
                     .addGroup(layout.createSequentialGroup()
@@ -284,15 +285,15 @@ implements NovoselacViewSucelje{
                             .addComponent(btnTrazi))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(21, 21, 21)
-                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addContainerGap(89, Short.MAX_VALUE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(btnDodajPosjetu)
                                 .addGap(18, 18, 18)
                                 .addComponent(btnObrisiPosjetu)
-                                .addGap(198, 198, 198))))))
+                                .addGap(198, 198, 198))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))))
         );
 
         pack();
@@ -301,12 +302,12 @@ implements NovoselacViewSucelje{
 
     private void txtUvjetKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtUvjetKeyPressed
         if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
-         ucitajPosjete();
+         ucitajPosjete();  // Dogovorene posjete
         }
     }//GEN-LAST:event_txtUvjetKeyPressed
 
     private void btnTraziActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTraziActionPerformed
-       ucitajPosjete();
+       ucitajPosjete();  // Dogovorene posjete
     }//GEN-LAST:event_btnTraziActionPerformed
 
     private void btnDodajPosjetuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDodajPosjetuActionPerformed
