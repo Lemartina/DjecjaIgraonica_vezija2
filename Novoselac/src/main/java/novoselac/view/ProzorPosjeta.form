@@ -24,7 +24,7 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="1" attributes="0">
-              <EmptySpace max="32767" attributes="0"/>
+              <EmptySpace pref="257" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
                       <Component id="lblPoruka" min="-2" pref="358" max="-2" attributes="0"/>
@@ -33,7 +33,11 @@
                   <Group type="102" alignment="1" attributes="0">
                       <Group type="103" groupAlignment="1" attributes="0">
                           <Component id="lblPotvrdjeno" min="-2" pref="287" max="-2" attributes="0"/>
-                          <Component id="btnPotvrdiTermin" min="-2" pref="262" max="-2" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <Component id="btnInformativanIzracun" min="-2" pref="192" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+                              <Component id="btnPotvrdiTermin" min="-2" pref="262" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
                       <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
                       <Component id="btnIspisDogovorenihPosjeta" min="-2" pref="256" max="-2" attributes="0"/>
@@ -104,10 +108,12 @@
               </Group>
               <EmptySpace pref="28" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
+                  <Component id="txtNapomena" min="-2" pref="575" max="-2" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jScrollPane3" min="-2" pref="241" max="-2" attributes="0"/>
                           <Component id="jLabel6" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtUkupnoUsluge" min="-2" pref="241" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
@@ -133,7 +139,6 @@
                           </Group>
                       </Group>
                   </Group>
-                  <Component id="txtNapomena" min="-2" pref="575" max="-2" attributes="0"/>
               </Group>
           </Group>
       </Group>
@@ -188,7 +193,7 @@
                           <Component id="btnIzracunaj" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="0" pref="34" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="46" max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
@@ -218,7 +223,9 @@
                                       <Component id="jScrollPane3" min="-2" pref="244" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
-                              <EmptySpace min="-2" pref="61" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="txtUkupnoUsluge" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
                               <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
@@ -228,10 +235,10 @@
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="btnPotvrdiTermin" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="btnIspisDogovorenihPosjeta" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnInformativanIzracun" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="lblPotvrdjeno" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="lblPoruka" min="-2" pref="30" max="-2" attributes="0"/>
@@ -467,6 +474,16 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="sat/a"/>
       </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnInformativanIzracun">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Infomativan izra&#x10d;un"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="txtUkupnoUsluge">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtUkupnoUslugeActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>
