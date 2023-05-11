@@ -175,7 +175,6 @@ implements NovoselacViewSucelje{
         btnIzracunaj = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         btnInformativanIzracun = new javax.swing.JButton();
-        txtUkupnoUsluge = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -313,10 +312,9 @@ implements NovoselacViewSucelje{
         jLabel2.setText("sat/a");
 
         btnInformativanIzracun.setText("Infomativan izračun");
-
-        txtUkupnoUsluge.addActionListener(new java.awt.event.ActionListener() {
+        btnInformativanIzracun.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtUkupnoUslugeActionPerformed(evt);
+                btnInformativanIzracunActionPerformed(evt);
             }
         });
 
@@ -391,8 +389,7 @@ implements NovoselacViewSucelje{
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel6)
-                            .addComponent(txtUkupnoUsluge, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel6))
                         .addGap(14, 14, 14)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
@@ -476,9 +473,7 @@ implements NovoselacViewSucelje{
                                     .addGroup(layout.createSequentialGroup()
                                         .addGap(0, 0, Short.MAX_VALUE)
                                         .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(txtUkupnoUsluge, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(27, 27, 27)
+                                .addGap(61, 61, 61)
                                 .addComponent(jLabel6)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(txtNapomena, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -726,19 +721,9 @@ implements NovoselacViewSucelje{
         // TODO add your handling code here:
     }//GEN-LAST:event_txtZbrojActionPerformed
 
-    private void txtUkupnoUslugeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUkupnoUslugeActionPerformed
-     BigDecimal zbroj = new BigDecimal(0); 
-     
-     
-      
-      Usluga u = lstPotvrdaUsluge.getSelectedValue();
-         for(int i=0;i<u.getCijena().longValue(); i++){
-                
-            
-            zbroj = zbroj.add(u.getCijena()); 
-            }
-        
-    }//GEN-LAST:event_txtUkupnoUslugeActionPerformed
+    private void btnInformativanIzracunActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInformativanIzracunActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnInformativanIzracunActionPerformed
 
     private void ucitajDjecu(){
         DefaultListModel<Dijete> m= new DefaultListModel<>();
@@ -791,7 +776,6 @@ implements NovoselacViewSucelje{
     private javax.swing.JList<Usluga> lstPotvrdaUsluge;
     private javax.swing.JList<Usluga> lstUslugaUBazi;
     private javax.swing.JTextField txtNapomena;
-    private javax.swing.JTextField txtUkupnoUsluge;
     private javax.swing.JTextField txtUvjet;
     private javax.swing.JTextField txtUvjet1;
     private javax.swing.JTextField txtZbroj;
