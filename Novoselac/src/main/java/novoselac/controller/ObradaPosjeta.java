@@ -37,14 +37,14 @@ public class ObradaPosjeta extends Obrada <Posjeta> {
                 .list();
     }
         
-        public List<Posjeta> read(Djelatnik d) {
-        return session.createQuery
-        ("from Posjeta"
-                + "where djelatnik= :djelatnik",
-                Posjeta.class)
-                .setParameter("djelatnik", d)
-                .list();
-    }
+//        public List<Posjeta> read(Djelatnik d) {
+//        return session.createQuery
+//        ("from Posjeta"
+//                + "where djelatnik= :djelatnik",
+//                Posjeta.class)
+//                .setParameter("djelatnik", d)
+//                .list();
+//    }
         
         
         
@@ -57,22 +57,33 @@ public class ObradaPosjeta extends Obrada <Posjeta> {
                 .list();
     }
     
-    public List<Posjeta> read(String uvjet) {
-        uvjet=uvjet.trim();
-        uvjet = "%" + uvjet + "%";
-       return session.createQuery("from Posjeta "
-               + " where "
-               + "concat(datumVrijemeDolaska,' ',napomena) "
-               + " like :uvjet "
-//               + " and sifra_djelatnik = null"
-               +"order by datumVrijemeDolaska desc" , 
-               Posjeta.class)
-               .setParameter("uvjet", uvjet)
-               .setMaxResults(10)
-               .list();
-       
-       
+//    public List<Posjeta> read(String uvjet) {
+//        uvjet=uvjet.trim();
+//        uvjet = "%" + uvjet + "%";
+//       return session.createQuery("from Posjeta "
+//               + " where "
+////               + "concat(datumVrijemeDolaska,' ',napomena) "
+////               + " like :uvjet "
+////               + " and "
+//               + " Djelatnik djelatnik= :sifra_djelatnik is null "
+//               +" order by datumVrijemeDolaska desc" , 
+//               Posjeta.class)
+//               .setParameter("uvjet", uvjet)
+//               .setMaxResults(10)
+//               .list();
+//       
+//       
+//    }
+    
+     public List<Posjeta> read(Djelatnik x) {
+        return session.createQuery
+        ("from Posjeta"
+                +" whwere djeltanik= :djelatnik  is null"     
+                , Posjeta.class)
+                .setParameter("djelatnik", x)
+                .list();
     }
+    
 //           public List<Posjeta> read(Posjeta p) {
 //        
 //       return session.createQuery("from Posjeta "
