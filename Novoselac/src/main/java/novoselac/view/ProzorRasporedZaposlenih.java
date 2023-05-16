@@ -77,8 +77,8 @@ implements NovoselacViewSucelje{
 
       private void ucitajPosjete(){  //Dogovorene psojete
            DefaultListModel<Posjeta> m = new DefaultListModel<>();
-//        m.addAll(new ObradaPosjeta().read(x)
-//                obradaPosjeta.read(txtUvjet.getText().trim()));
+        m.addAll(obradaPosjeta.read(
+                txtUvjet.getText().trim()));
        
         
         //pretraga na ekranu u formatu datuma bez kalendara  - nije dobro dupla ispis na ekranu
