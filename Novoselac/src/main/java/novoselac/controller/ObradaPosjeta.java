@@ -87,7 +87,7 @@ public class ObradaPosjeta extends Obrada <Posjeta> {
 
     @Override
     protected void kontrolaUnos() throws NovoselacException {
-    
+    kontrolaDodavanjePosjete();
     }
     @Override
     protected void kontrolaPromjena() throws NovoselacException {
@@ -98,5 +98,21 @@ public class ObradaPosjeta extends Obrada <Posjeta> {
    }
 
 
+     
+    private void kontrolaDodavanjePosjete() throws NovoselacException{
+         List<Posjeta> posjete=null;
+        try {
+            posjete = session.createQuery("from Posjete p "
+                    + " where p.djelanik=:sifra_djelatnik", 
+                    Posjeta.class)
+                    .setParameter("sifra_djelatnk", entitet.getDjelatnik())
+                    .list();
+        } catch (Exception e) {
+        }
+        if(posjete!=null && !posjete.isEmpty()){
+            throw new NovoselacException("Posjeta je već dodana na djelatnika");
+        }
+    }
+    
     
 }
