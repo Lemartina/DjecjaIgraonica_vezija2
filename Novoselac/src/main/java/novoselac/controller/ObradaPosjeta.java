@@ -103,14 +103,14 @@ public class ObradaPosjeta extends Obrada <Posjeta> {
          List<Posjeta> posjete=null;
         try {
             posjete = session.createQuery("from Posjete p "
-                    + " where p.djelanik=:sifra_djelatnik", 
+                    + " where p.sifra_djelanik=:sifra_djelatnik", 
                     Posjeta.class)
                     .setParameter("sifra_djelatnk", entitet.getDjelatnik())
                     .list();
         } catch (Exception e) {
         }
         if(posjete!=null && !posjete.isEmpty()){
-            throw new NovoselacException("Posjeta je već dodana na djelatnika");
+            throw new NovoselacException("Posjeta je već dodana na djelatnika u bazi");
         }
     }
     
